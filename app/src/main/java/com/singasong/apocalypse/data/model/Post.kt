@@ -1,4 +1,4 @@
-package com.singasong.apocalypse.model
+package com.singasong.apocalypse.data.model
 
 import java.util.*
 

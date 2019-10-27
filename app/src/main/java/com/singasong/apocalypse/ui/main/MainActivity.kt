@@ -1,4 +1,4 @@
-package com.singasong.apocalypse.ui
+package com.singasong.apocalypse.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
