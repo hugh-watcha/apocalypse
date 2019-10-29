@@ -14,7 +14,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?android:attr/selectableItemBackground"
-        android:minWidth="42dp">
+        android:minWidth="52dp"
+        android:minHeight="36dp"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="4dp">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_bottom_tab"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/text"
@@ -22,6 +35,9 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:maxLines="2"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp"
             android:textColor="@color/main_bottom_tab_text"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"

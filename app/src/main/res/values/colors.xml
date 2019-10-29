@@ -4,6 +4,11 @@
     <color name="colorPrimaryDark">#D0D0D0</color>
     <color name="colorAccent">#2280F0</color>
 
+    <color name="white">#FFFFFFFF</color>
+
     <color name="darkIcon">#000000</color>
     <color name="fontDark">#000000</color>
+
+    <color name="bottomTabLayoutBg">#FFE0E0E0</color>
+    <color name="tabBg">#FFF0F0F0</color>
 </resources>
