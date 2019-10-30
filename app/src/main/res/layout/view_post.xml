@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="post"
+            type="com.singasong.apocalypse.data.model.Post" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@{post.text}"
+            android:textColor="@color/fontDark"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:text="@{post.createdAt}"
+            android:textColor="@color/fontSemiDark"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/text"
+            app:layout_constraintTop_toBottomOf="@id/text" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:gravity="start"
+            android:maxLines="1"
+            android:text="@{post.anonymous ? @string/anonymous : post.name}"
+            android:textColor="@color/fontDark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/date"
+            app:layout_constraintTop_toTopOf="@id/date" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

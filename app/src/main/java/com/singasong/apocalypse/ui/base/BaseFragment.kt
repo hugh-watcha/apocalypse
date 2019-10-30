@@ -7,10 +7,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
-import com.singasong.apocalypse.data.Repository
-import org.koin.android.ext.android.inject
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
 
@@ -19,6 +15,7 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
     protected lateinit var dataBinding: T
 
     abstract fun bindData(dataBinding: T)
+    abstract fun initViews(view: View, savedInstanceState: Bundle?)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,12 +23,14 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         dataBinding = DataBindingUtil.inflate(inflater, layoutId, container, false)
+        initViews(dataBinding.root, savedInstanceState)
         return dataBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bindData(dataBinding)
+        dataBinding.lifecycleOwner = this
         dataBinding.executePendingBindings()
     }
 }
